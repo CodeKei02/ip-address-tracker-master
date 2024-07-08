@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+    --white: #fff;
+    --font-family: "Rubik", sans-serif;
+}
+
+body{
+    font-family: var(--font-family);
+    min-height: 100vh;
+    text-align: center;
+}
+
+.header{
+    background-image: url(../images/pattern-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 768px;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    min-width: max-content;
+    position: relative;
+}
+
+.app{
+    width: 90%;
+    height: 230px;
+    padding: 1rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.app__name h1{
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.app__input--input{
+    width: 80%;
+    max-width: 450px;
+    padding: 1rem;
+    border: 0;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: var(--very-dark-gray);
+    padding: 1rem;
+    border: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+
+    position: relative;
+    right: 5px;
+}
+
+.user__info{
+    background-color: var(--white);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    top: 150px;
+    z-index: 2;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.user__info--box{
+    display: flex;
+    flex-direction: column;
+}
+
+.user__info--name{
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.user__value{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#map {
+    background-color: lightgray;
+    position: absolute;
+    bottom: 0;
+    height: 65vh;
+    width: 100vw;
+    z-index: 1; 
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    z-index: 500;
+    text-align: center; 
+}
+.modal .o {
+    width: 5%;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    animation: rotate 2s infinite linear;
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    0% {
+    transform: rotate(0); }
+    100% {
+    transform: rotate(360deg); 
+    } 
+}
+@media (min-width: 786px){
+    .header{
+        background-image: url(../images/pattern-bg-desktop.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .app{
+        height: 260px;
+    }
+
+    .user__info{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 1200px;
+        padding: 3.5rem;
+        top: 200px;
+        text-align: start;
+    }
+
+    .user__info--box{
+        margin-right: 1.5rem;
+        
+    }
+}
